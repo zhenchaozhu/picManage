@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/static/bootstap/js/bootstrap.js"></script>
     <style type="text/css">
         .hero-unit .file-input-wrapper {
-            margin: 0 0 10px 0;
+            margin: 20px 0 10px 0;
         }
     </style>
 </head>
@@ -21,12 +21,39 @@
         <div class="hero-unit">
             <h1>图片管理</h1>
             <a class="file-input-wrapper btn">"Uploading"
-                <input type="file" style="position:absolute;left:260px;top:190px;opacity:0;z-index:99;"/>
+                <input id="file" type="file" style="position:absolute;left:260px;top:190px;opacity:0;z-index:99;"/>
             </a>
         </div>
     </div>
 </body>
 <script type="text/javascript">
+    ;(function() {
+        var file = $('#file');
+        FIleReader = window.FileReader;
+        file.on('change', function() {
+            var reader = new FileReader();
 
+        })
+        $("#file").change(function() {
+            if (FileReader) {
+                var reader = new FileReader(),
+                        file = this.files[0];
+                reader.onload = function(e) {
+                    clip.attr("src", e.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+            else {
+                path = $(this).val();
+                if (/"\w\W"/.test(path)) {
+                    path = path.slice(1,-1);
+                }
+                alert(path);
+                clip.attr("src",path);
+                alert(clip[0].src);
+            }
+        });
+
+    })()
 </script>
 </html>
