@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bea1a878-d19e-493b-84d6-fb922ff9243c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic_manage/picture/views/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic_manage/static/js/1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic_manage/static/js/jquery.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/picture/models.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/pic_manage/picture/views.py" afterPath="$PROJECT_DIR$/pic_manage/picture/views/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/picture/__init__.py" afterPath="$PROJECT_DIR$/pic_manage/picture/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/settings.py" afterPath="$PROJECT_DIR$/pic_manage/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/templates/main.html" afterPath="$PROJECT_DIR$/pic_manage/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/urls.py" afterPath="$PROJECT_DIR$/pic_manage/urls.py" />
-    </list>
+    <list default="true" id="bea1a878-d19e-493b-84d6-fb922ff9243c" name="Default" comment="" />
     <ignored path="picManage.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
