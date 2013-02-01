@@ -4,7 +4,8 @@
     <title>图片管理</title>
     <!-- Bootstrap -->
     <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <script type="text/javascript" src="/static/bootstap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
     <style type="text/css">
         .hero-unit .file-input-wrapper {
             margin: 20px 0 10px 0;
@@ -20,40 +21,48 @@
         </div>
         <div class="hero-unit">
             <h1>图片管理</h1>
-            <a class="file-input-wrapper btn">"Uploading"
-                <input id="file" type="file" style="position:absolute;left:260px;top:190px;opacity:0;z-index:99;"/>
-            </a>
         </div>
+        <a class="file-input-wrapper btn">"Uploading"
+            <input id="file" type="file" style="position:absolute;left:260px;top:280px;opacity:0;z-index:99;" multiple/>
+        </a>
+        <div id="demo_result"></div>
     </div>
 </body>
 <script type="text/javascript">
-    ;(function() {
-        var file = $('#file');
-        FIleReader = window.FileReader;
-        file.on('change', function() {
-            var reader = new FileReader();
-
-        })
-        $("#file").change(function() {
-            if (FileReader) {
-                var reader = new FileReader(),
-                        file = this.files[0];
-                reader.onload = function(e) {
-                    clip.attr("src", e.target.result);
-                };
-                reader.readAsDataURL(file);
+    var config = {
+        'fileInput': $('#file'),
+        'result': $('#demo_result'),
+        'url': '/upload/'
+    }
+    var Upload = function(config) {
+        this.config = config;
+    }
+    Upload.prototype = {
+        init: function() {
+            self = this;
+            this.fileInput = config.fileInput;
+            this.result = config.result;
+            this.url = config.url;
+            this.bindUI();
+        },
+        bindUI: function() {
+            self.fileInput.on('change', self.getFiles);
+        },
+        getFiles: function() {
+            var files = this.files;
+            var formData = new FormData();
+            for(var i=0; file=files[i]; i++) {
+                console.log(file);
+                formData.append('FileData', file);
             }
-            else {
-                path = $(this).val();
-                if (/"\w\W"/.test(path)) {
-                    path = path.slice(1,-1);
-                }
-                alert(path);
-                clip.attr("src",path);
-                alert(clip[0].src);
-            }
-        });
-
-    })()
+            self.uploadFiles(formData);
+        },
+        uploadFiles: function(data) {
+            $.post(self.url, data, function() {
+                alert('success');
+            })
+        }
+    }
+    new Upload().init();
 </script>
 </html>
