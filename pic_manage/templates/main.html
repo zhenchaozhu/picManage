@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <title>图片管理</title>
     <!-- Bootstrap -->
-    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
-    <script type="text/javascript" src="/static/js/jquery.js"></script>
-    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.js"></script>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="/static/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
     <style type="text/css">
         .hero-unit .file-input-wrapper {
             margin: 20px 0 10px 0;
@@ -25,6 +27,7 @@
         <a class="file-input-wrapper btn">"Uploading"
             <input id="file" type="file" style="position:absolute;left:260px;top:280px;opacity:0;z-index:99;" multiple/>
         </a>
+        <input type="hidden" value="{{ csrf_token }}" id="csrf"/>
         <div id="demo_result"></div>
     </div>
 </body>
@@ -32,7 +35,8 @@
     var config = {
         'fileInput': $('#file'),
         'result': $('#demo_result'),
-        'url': '/upload/'
+        'url': '/upload/',
+        'csrf_token': $('#csrf').val()
     }
     var Upload = function(config) {
         this.config = config;
@@ -43,6 +47,7 @@
             this.fileInput = config.fileInput;
             this.result = config.result;
             this.url = config.url;
+            this.csrf_token = config.csrf_token;
             this.bindUI();
         },
         bindUI: function() {
@@ -51,15 +56,23 @@
         getFiles: function() {
             var files = this.files;
             var formData = new FormData();
+            var csrf_token = self.csrf_token;
             for(var i=0; file=files[i]; i++) {
-                console.log(file);
-                formData.append('FileData', file);
+                formData.append('file', file);
+                formData.append('csrfmiddlewaretoken', csrf_token);
             }
             self.uploadFiles(formData);
         },
         uploadFiles: function(data) {
-            $.post(self.url, data, function() {
-                alert('success');
+            $.ajax({
+                url: self.url,
+                type: 'POST',
+                data: data,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    console.log(result);
+                }
             })
         }
     }

@@ -142,3 +142,5 @@ LOGGING = {
         },
     }
 }
+
+UPLOAD_FILE_ROOT = ROOT_PATH + '/static/upload/'
