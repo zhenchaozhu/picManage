@@ -4,39 +4,250 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Cache-Control" content="no-cache">
     <title>图片管理</title>
-    <!-- Bootstrap -->
-    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script type="text/javascript" src="/static/js/jquery-1.9.0.min.js"></script>
-    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.masonry.min.js"></script>
     <style type="text/css">
-        .hero-unit .file-input-wrapper {
-            margin: 20px 0 10px 0;
+        a{text-decoration: none;}
+        .content{width:960px; margin:0 auto;}
+        .upload_loading{height:250px; background:url(http://changyan.itc.cn/static/wl/cmt/loading.gif) no-repeat center;}
+        .box {
+            margin: 5px;
+            padding: 5px;
+            background: #D8D5D2;
+            font-size: 11px;
+            line-height: 1.4em;
+            float: left;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            width:280px;
+        }
+        .box img {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+        }
+        .wide {
+            width: 550px;
+            margin-left: -275px;
+        }
+        .modal {
+            position: fixed;
+            z-index: 99999;
+            top: 50%;
+            left: 50%;
+            margin-top: -220px;
+            padding: 30px 30px 20px 30px;
+            background: white;
+            border: 1px solid #F7F5F5;
+            box-shadow: 0 2px 5px rgba(34, 25, 25, .4);
+            -moz-box-shadow: 0 2px 5px rgba(34,25,25,.4);
+            -webkit-box-shadow: 0 2px 5px rgba(34, 25, 25, .4);
+        }
+        .modal .header {
+            position: relative;
+            margin: -30px -31px 20px;
+            padding: 18px 31px 8px;
+            background-color: #FAFAFA;
+            border-bottom: 1px solid #EBEBEB;
+        }
+        .modal .close {
+            position: absolute;
+            z-index: 1;
+            top: -1px;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 57px;
+            border-left: 1px solid #EBEBEB;
+            text-indent: -9999px;
+        }
+        .modal .close strong {
+            display: none;
+        }
+        .modal .close span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(http://huaban.com/img/Close.png) top center no-repeat;
+        }
+        .modal h2 {
+            margin: 0;
+            font-size: 21px;
+            line-height: 1em;
+            color: #999;
+            text-shadow: 0 1px white;
+        }
+        .wbtn {
+            color: #524D4D;
+            text-shadow: 0 1px rgba(255, 255, 255, .9);
+        }
+        .btn18, .btn18 span {
+            font-size: 18px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+        .btn {
+            position: relative;
+            display: inline-block;
+            padding: .45em .825em .45em;
+            text-align: center;
+            line-height: 1em;
+            border: 1px solid transparent;
+            -webkit-border-radius: .2em;
+            -webkit-transition-property: color,-webkit-box-shadow,text-shadow;
+            -webkit-transition-duration: .05s;
+            -webkit-transition-timing-function: ease-in-out;
+            box-shadow: 0 1px rgba(255, 255, 255, .8),inset 0 1px rgba(255, 255, 255, .35);
+            -webkit-box-shadow: 0 1px rgba(255, 255, 255, .8),inset 0 1px rgba(255, 255, 255, .35);
+            cursor: pointer;
+        }
+        .btn strong {
+            display: block;
+            position: relative;
+            z-index: 2;
+            line-height: 15px;
+            vertical-align: bottom;
+            white-space: nowrap;
+        }
+        strong {
+            font-weight: 700;
+        }
+        .wbtn span, button.wbtn, input[type="button"].wbtn {
+            border-color: #BBB;
+            background: -webkit-gradient(linear,0% 0,0% 100%,from( #FDFAFB),to( #F0EDED),color-stop(.5, #F9F7F7),color-stop(.5, #F6F3F4));
+            background: -moz-linear-gradient(center top, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+            background: -o-linear-gradient(top left, #FDFAFB, #F9F7F7 50%, #F6F3F4 50%, #F0EDED);
+            background: -webkit-gradient(linear,0% 0,0% 100%,from( #FDFAFB),to( #F0EDED),color-stop(.5, #F9F7F7),color-stop(.5, #F6F3F4));
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfafb', endColorstr='#f0eded');
+        }
+        .btn18, .btn18 span {
+            font-size: 18px;
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+        .btn span {
+            position: absolute;
+            z-index: 1;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+            display: block;
+            border: 1px solid;
+            opacity: 1;
+            -webkit-border-radius: .3em;
+            -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, .35);
+            -webkit-transition-property: opacity;
+            -webkit-transition-duration: .5s;
+            -webkit-transition-timing-function: ease-in-out;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(255, 255, 255, .93);
+            z-index: 99998;
+        }
+        #preview img{
+            height:150px;
+            width:100px;
+            display:inline-block;
+            margin-right:10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="navbar navbar-inverse">
-            <div class="navbar-inner">
-                <a class="brand">Uploading Images</a>
+    <div class="content">
+        <a href="#" class="add">
+            <label>添加</label>
+            <input type="hidden" value="{{ csrf_token }}" id="csrf"/>
+        </a>
+        <div id="container">
+            <div class="box">
+                <a>
+                    <img src="/static/images/1.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/2.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/3.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/1.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/2.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/3.jpg" />
+                </a>
+            </div>
+            <div class="box">
+                <a>
+                    <img src="/static/images/1.jpg" />
+                </a>
             </div>
         </div>
-        <div class="hero-unit">
-            <h1>图片管理</h1>
+        <div id="UploadPin" style="display: none; " class="ModalContainer  destroy">
+            <div class="overlay"></div>
+            <div class="modal wide ">
+                <div class="header">
+                    <a href="#" class="close">
+                        <strong>Close</strong>
+                        <span></span>
+                    </a>
+                    <h2>上传图片</h2>
+                </div>
+                <div class="PinTop">
+                    <a id="upload_button" href="#" onclick="return false;" class="btn btn18 wbtn">
+                        <strong> 选择图片文件</strong>
+                        <span></span>
+                    </a>
+                    <div style="position: absolute; opacity: 0.01; overflow: hidden; ">
+                        <input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px; " multiple />
+                    </div>
+                </div>
+                <div id="preview"></div>
+            </div>
+
         </div>
-        <a class="file-input-wrapper btn">"Uploading"
-            <input id="file" type="file" style="position:absolute;left:260px;top:280px;opacity:0;z-index:99;" multiple/>
-        </a>
-        <input type="hidden" value="{{ csrf_token }}" id="csrf"/>
-        <div id="demo_result"></div>
     </div>
 </body>
 <script type="text/javascript">
+    var $container = $('#container');
+    $container.imagesLoaded(function(){
+        $container.masonry({
+            itemSelector : '.box'
+        });
+    });
+
     var config = {
-        'fileInput': $('#file'),
-        'result': $('#demo_result'),
+        'fileInput': $('input[type="file"]'),
+        'addNode': $('.add'),
+        'closeNode': $('.close'),
+        'uploadButton': $('#upload_button'),
+        'uploadPin': $('#UploadPin'),
         'url': '/upload/',
-        'csrf_token': $('#csrf').val()
+        'csrf_token': $('#csrf').val(),
+        'fileFilter': []
     }
     var Upload = function(config) {
         this.config = config;
@@ -44,24 +255,79 @@
     Upload.prototype = {
         init: function() {
             self = this;
-            this.fileInput = config.fileInput;
-            this.result = config.result;
-            this.url = config.url;
-            this.csrf_token = config.csrf_token;
-            this.bindUI();
+            self.fileInput = config.fileInput;
+            self.addNode = config.addNode,
+            self.closeNode = config.closeNode,
+            self.uploadButton = config.uploadButton,
+            self.uploadPin = config.uploadPin,
+            self.url = config.url;
+            self.csrf_token = config.csrf_token;
+            self.fileFilter = config.fileFilter;
+            self.bindUI();
         },
         bindUI: function() {
+            var fileInput = self.fileInput, uploadPin = self.uploadPin;
+            self.uploadButton.click(function() {
+                fileInput.trigger('click');
+            })
+            self.addNode.click(function() {
+                uploadPin.show();
+                fileInput.trigger('click');
+            })
+            $('.close').click(function() {
+                uploadPin.hide();
+                self.fileFilter = [];
+            })
             self.fileInput.on('change', self.getFiles);
         },
+        filterFiles: function(files) {
+            var arrFiles = [];
+            for (var i = 0, file; file = files[i]; i++) {
+                if (file.type.indexOf("image") == 0) {
+                    arrFiles.push(file);
+                } else {
+                    alert('文件"' + file.name + '"不是图片。');
+                }
+            }
+            return arrFiles;
+        },
         getFiles: function() {
-            var files = this.files;
-            var formData = new FormData();
-            var csrf_token = self.csrf_token;
-            for(var i=0; file=files[i]; i++) {
+            var files = this.files,
+                formData = new FormData(),
+                csrf_token = self.csrf_token;
+            self.fileFilter = self.fileFilter.concat(self.filterFiles(files));
+            self.dealFiles();
+            for(var i=0; file=self.fileFilter; i++) {
                 formData.append('file', file);
                 formData.append('csrfmiddlewaretoken', csrf_token);
             }
-            self.uploadFiles(formData);
+//            self.uploadFiles(formData);
+        },
+        dealFiles: function() {
+            for (var i = 0, file; file = this.fileFilter[i]; i++) {
+                file.index = i;
+            }
+            this.onSelect(self.fileFilter);
+            return this;
+        },
+        onSelect: function(files) {
+            var html = '', i = 0, previewNode = $("#preview");
+            previewNode.html('<div class="upload_loading"></div>');
+            var appendImage = function() {
+                file = files[i];
+                if(file) {
+                    var reader = new FileReader(), name = file.name;
+                    reader.onload = function() {
+                        html = html + '<img class="img-"' + i + '" src="' + this.result + '"/>';
+                        i++;
+                        appendImage();
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    previewNode.html(html);
+                }
+            }
+            appendImage();
         },
         uploadFiles: function(data) {
             $.ajax({

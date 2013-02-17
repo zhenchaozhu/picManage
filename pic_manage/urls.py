@@ -4,6 +4,7 @@ from django.conf.urls.defaults import patterns, include, url
 from django.contrib import admin
 from pic_manage.picture.views.main import homepage_view
 from pic_manage.picture.views.upload import upload_files
+from pic_manage.picture.views.api import api_get_pics
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
@@ -18,5 +19,6 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^api/pics/', api_get_pics)
 )
 urlpatterns += staticfiles_urlpatterns()
