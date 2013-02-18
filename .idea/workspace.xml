@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea1a878-d19e-493b-84d6-fb922ff9243c" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/upload/20130217000839_n0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/upload/20130217043421_n3.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pic_manage/static/css/upload.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/css/bootstrap-responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/css/bootstrap-responsive.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/img/glyphicons-halflings-white.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/img/glyphicons-halflings.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/js/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/bootstrap/js/bootstrap.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/picture/models/picture.py" afterPath="$PROJECT_DIR$/pic_manage/picture/models/picture.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/picture/views/upload.py" afterPath="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/templates/main.html" afterPath="$PROJECT_DIR$/pic_manage/templates/main.html" />
     </list>
     <ignored path="picManage.iws" />
@@ -41,7 +46,16 @@
       <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pic_manage/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="9" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6574395">
+            <state line="52" column="28" selection-start="1968" selection-end="1968" vertical-scroll-proportion="1.1516246">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pic_manage/static/css/upload.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="147" column="17" selection-start="3853" selection-end="3853" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -50,7 +64,7 @@
       <file leaf-file-name="jquery.masonry.min.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="4265" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.0">
+            <state line="9" column="2044" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -80,15 +94,6 @@
         <entry file="file://$PROJECT_DIR$/pic_manage/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="142" column="5" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pic_manage/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="27" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +141,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/pic_manage/static/bootstrap/js/bootstrap.js" />
         <option value="$PROJECT_DIR$/pic_manage/static/js/1.js" />
         <option value="$PROJECT_DIR$/pic_manage/picture/model/picture.py" />
         <option value="$PROJECT_DIR$/pic_manage/picture/model/__init__.py" />
@@ -151,6 +155,7 @@
         <option value="$PROJECT_DIR$/pic_manage/settings.py" />
         <option value="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
         <option value="$PROJECT_DIR$/pic_manage/picture/models/picture.py" />
+        <option value="$PROJECT_DIR$/pic_manage/static/upload.css" />
         <option value="$PROJECT_DIR$/pic_manage/templates/main.html" />
       </list>
     </option>
@@ -237,10 +242,6 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -257,6 +258,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -444,13 +449,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="24" width="1615" height="1055" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22264875" sideWeight="0.46547884" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.076135635" sideWeight="0.7249443" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20665388" sideWeight="0.7249443" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -522,11 +527,6 @@
         <state line="2" column="28" selection-start="64205" selection-end="64205" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/static/bootstrap/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="23" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.3-py2.7.egg/django/http/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="481" column="8" selection-start="18483" selection-end="18483" vertical-scroll-proportion="0.33183858" />
@@ -563,21 +563,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="50" selection-start="233" selection-end="240" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="142" column="5" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="4265" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -605,9 +593,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="2044" selection-start="2249" selection-end="2249" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="50" selection-start="233" selection-end="240" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/static/css/upload.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="147" column="17" selection-start="3853" selection-end="3853" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="9" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6574395">
+        <state line="52" column="28" selection-start="1968" selection-end="1968" vertical-scroll-proportion="1.1516246">
           <folding />
         </state>
       </provider>
