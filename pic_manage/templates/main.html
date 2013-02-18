@@ -161,14 +161,46 @@
             display:inline-block;
             margin-right:10px;
         }
+        .submit{
+            text-align:center;
+        }
     </style>
 </head>
 <body>
     <div class="content">
         <a href="#" class="add">
             <label>添加</label>
+            <div style="position: absolute; opacity: 0.01; overflow: hidden; ">
+                <input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px; " multiple />
+            </div>
             <input type="hidden" value="{{ csrf_token }}" id="csrf"/>
         </a>
+        <div id="UploadPin" style="display: none; " class="ModalContainer  destroy">
+            <div class="overlay"></div>
+            <div class="modal wide ">
+                <div class="header">
+                    <a href="#" class="close">
+                        <strong>Close</strong>
+                        <span></span>
+                    </a>
+                    <h2>上传图片</h2>
+                </div>
+                <div class="PinTop">
+                    <a id="upload_button" href="#" onclick="return false;" class="btn btn18 wbtn">
+                        <strong> 选择图片文件</strong>
+                        <span></span>
+                    </a>
+                    <div style="position: absolute; opacity: 0.01; overflow: hidden; ">
+                        <input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px; " multiple />
+                    </div>
+                </div>
+                <div id="preview"></div>
+                <div class="submit">
+                    <span>确定提交</span>
+                </div>
+            </div>
+
+        </div>
         <div id="container">
             <div class="box">
                 <a>
@@ -206,29 +238,7 @@
                 </a>
             </div>
         </div>
-        <div id="UploadPin" style="display: none; " class="ModalContainer  destroy">
-            <div class="overlay"></div>
-            <div class="modal wide ">
-                <div class="header">
-                    <a href="#" class="close">
-                        <strong>Close</strong>
-                        <span></span>
-                    </a>
-                    <h2>上传图片</h2>
-                </div>
-                <div class="PinTop">
-                    <a id="upload_button" href="#" onclick="return false;" class="btn btn18 wbtn">
-                        <strong> 选择图片文件</strong>
-                        <span></span>
-                    </a>
-                    <div style="position: absolute; opacity: 0.01; overflow: hidden; ">
-                        <input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px; " multiple />
-                    </div>
-                </div>
-                <div id="preview"></div>
-            </div>
 
-        </div>
     </div>
 </body>
 <script type="text/javascript">
@@ -245,6 +255,7 @@
         'closeNode': $('.close'),
         'uploadButton': $('#upload_button'),
         'uploadPin': $('#UploadPin'),
+        'submit': $('.submit'),
         'url': '/upload/',
         'csrf_token': $('#csrf').val(),
         'fileFilter': []
@@ -256,10 +267,11 @@
         init: function() {
             self = this;
             self.fileInput = config.fileInput;
-            self.addNode = config.addNode,
-            self.closeNode = config.closeNode,
-            self.uploadButton = config.uploadButton,
-            self.uploadPin = config.uploadPin,
+            self.addNode = config.addNode;
+            self.closeNode = config.closeNode;
+            self.uploadButton = config.uploadButton;
+            self.uploadPin = config.uploadPin;
+            self.submit = config.submit;
             self.url = config.url;
             self.csrf_token = config.csrf_token;
             self.fileFilter = config.fileFilter;
@@ -272,13 +284,13 @@
             })
             self.addNode.click(function() {
                 uploadPin.show();
-                fileInput.trigger('click');
             })
             $('.close').click(function() {
                 uploadPin.hide();
                 self.fileFilter = [];
             })
             self.fileInput.on('change', self.getFiles);
+            self.submit.on('click', self.uploadFiles);
         },
         filterFiles: function(files) {
             var arrFiles = [];
@@ -297,20 +309,15 @@
                 csrf_token = self.csrf_token;
             self.fileFilter = self.fileFilter.concat(self.filterFiles(files));
             self.dealFiles();
-            for(var i=0; file=self.fileFilter; i++) {
-                formData.append('file', file);
-                formData.append('csrfmiddlewaretoken', csrf_token);
-            }
-//            self.uploadFiles(formData);
         },
         dealFiles: function() {
             for (var i = 0, file; file = this.fileFilter[i]; i++) {
                 file.index = i;
             }
-            this.onSelect(self.fileFilter);
+            self.previewFiles(self.fileFilter);
             return this;
         },
-        onSelect: function(files) {
+        previewFiles: function(files) {
             var html = '', i = 0, previewNode = $("#preview");
             previewNode.html('<div class="upload_loading"></div>');
             var appendImage = function() {
@@ -325,21 +332,28 @@
                     reader.readAsDataURL(file);
                 } else {
                     previewNode.html(html);
+                    $('.submit').show();
                 }
             }
             appendImage();
         },
-        uploadFiles: function(data) {
-            $.ajax({
-                url: self.url,
-                type: 'POST',
-                data: data,
-                processData: false,
-                contentType: false,
-                success: function(result) {
-                    console.log(result);
-                }
-            })
+        uploadFiles: function() {
+            var formData = new FormData();
+            for(var i=0; file=self.fileFilter; i++) {
+                formData.append('file', file);
+                formData.append('csrfmiddlewaretoken', self.csrf_token);
+            }
+            console.log(formData);
+//            $.ajax({
+//                url: self.url,
+//                type: 'POST',
+//                data: formData,
+//                processData: false,
+//                contentType: false,
+//                success: function(result) {
+//                    console.log(result);
+//                }
+//            })
         }
     }
     new Upload().init();
