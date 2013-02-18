@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="Cache-Control" content="no-cache">
     <title>图片管理</title>
     <script type="text/javascript" src="/static/js/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.masonry.min.js"></script>
@@ -16,16 +15,14 @@
             background: #D8D5D2;
             font-size: 11px;
             line-height: 1.4em;
-            float: left;
             -webkit-border-radius: 5px;
-            -moz-border-radius: 5px;
-            border-radius: 5px;
             width:280px;
         }
         .box img {
             display: block;
             width: 100%;
-            max-width: 280px;
+            max-width:280px;
+            max-height:500px;
         }
         .wide {
             width: 550px;
@@ -170,11 +167,9 @@
     <div class="content">
         <a href="#" class="add">
             <label>添加</label>
-            <div style="position: absolute; opacity: 0.01; overflow: hidden; ">
-                <input type="file" name="file" size="1" style="position: absolute; top: 0px; left: 0px; border: 0px; " multiple />
-            </div>
             <input type="hidden" value="{{ csrf_token }}" id="csrf"/>
         </a>
+
         <div id="UploadPin" style="display: none; " class="ModalContainer  destroy">
             <div class="overlay"></div>
             <div class="modal wide ">
@@ -199,55 +194,61 @@
                     <span>确定提交</span>
                 </div>
             </div>
+        </div>
 
-        </div>
-        <div id="container">
-            <div class="box">
-                <a>
-                    <img src="/static/images/1.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/2.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/3.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/1.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/2.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/3.jpg" />
-                </a>
-            </div>
-            <div class="box">
-                <a>
-                    <img src="/static/images/1.jpg" />
-                </a>
-            </div>
-        </div>
+        <div id="container"></div>
 
     </div>
 </body>
 <script type="text/javascript">
-    var $container = $('#container');
-    $container.imagesLoaded(function(){
-        $container.masonry({
-            itemSelector : '.box'
-        });
-    });
+    var page = 0;
+    var addImages = function(page) {
+        $.get('/api/pics/?page=' + page, function(rst) {
+            if(!(rst instanceof Object))
+                rst = JSON.parse(rst);
+            path = rst.content;
+            var data = [];
+            for(var i = 0, len = path.length; i < len; i++) {
+                data.push('<div class="box"><a><img src="' + path[i] + '"/></a></div>');
+            }
+            $boxes = $(data.join(''));
+            var $container = $('#container');
+            if(page === 0) {
+                $container.append($boxes);
+                $container.imagesLoaded(function(){
+                    $container.masonry({
+                        itemSelector : '.box'
+                    });
+                });
+            } else {
+                $('#container').append($boxes);
+                $container.imagesLoaded(function(){
+                    $container.masonry('appended', $boxes);
+                });
+            }
+        })
+    }
+
+    addImages(page);
+
+    window.onload = function() {
+        var page = 0, reset = 0;
+        $(document).on('scroll', function() {
+            var pageHeight = document.documentElement.scrollHeight;
+            var clientHeight = document.documentElement.clientHeight;
+            var bottom = pageHeight - clientHeight - 20;
+            var scrollTop = document.body.scrollTop;
+            if(reset === 0) {
+                if(scrollTop > bottom) {
+                    page++;
+                    window.setTimeout(addImages(page), 1000);
+                    reset = 1;
+                }
+            } else {
+                window.setTimeout(function() { reset = 0; }, 1000);
+            }
+        })
+    }
 
     var config = {
         'fileInput': $('input[type="file"]'),
@@ -284,17 +285,25 @@
             })
             self.addNode.click(function() {
                 uploadPin.show();
+                console.log(self.fileFilter);
             })
             $('.close').click(function() {
                 uploadPin.hide();
                 self.fileFilter = [];
+                $('#preview').html('');
             })
             self.fileInput.on('change', self.getFiles);
             self.submit.on('click', self.uploadFiles);
         },
+        getFiles: function() {
+            var files = this.files;
+            self.fileFilter = self.fileFilter.concat(self.filterFiles(files));
+            self.dealFiles();
+        },
         filterFiles: function(files) {
             var arrFiles = [];
-            for (var i = 0, file; file = files[i]; i++) {
+            for (var i = 0, len = files.length; i < len; i++) {
+                var file = files[i];
                 if (file.type.indexOf("image") == 0) {
                     arrFiles.push(file);
                 } else {
@@ -302,13 +311,6 @@
                 }
             }
             return arrFiles;
-        },
-        getFiles: function() {
-            var files = this.files,
-                formData = new FormData(),
-                csrf_token = self.csrf_token;
-            self.fileFilter = self.fileFilter.concat(self.filterFiles(files));
-            self.dealFiles();
         },
         dealFiles: function() {
             for (var i = 0, file; file = this.fileFilter[i]; i++) {
@@ -338,22 +340,29 @@
             appendImage();
         },
         uploadFiles: function() {
-            var formData = new FormData();
-            for(var i=0; file=self.fileFilter; i++) {
-                formData.append('file', file);
+            var formData = new FormData(), files = self.fileFilter;
+            for(var i = 0, len = files.length; i < len; i++) {
+                var file = files[i];
+                formData.append('file' + i, file);
                 formData.append('csrfmiddlewaretoken', self.csrf_token);
             }
             console.log(formData);
-//            $.ajax({
-//                url: self.url,
-//                type: 'POST',
-//                data: formData,
-//                processData: false,
-//                contentType: false,
-//                success: function(result) {
-//                    console.log(result);
-//                }
-//            })
+            $.ajax({
+                url: self.url,
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(result) {
+                    if(result)
+                        window.location.reload();
+                    else
+                        alert('上传图片失败');
+                },
+                error: function() {
+                    alert('上传图片失败');
+                }
+            })
         }
     }
     new Upload().init();

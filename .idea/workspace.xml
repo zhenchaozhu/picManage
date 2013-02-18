@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea1a878-d19e-493b-84d6-fb922ff9243c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/upload/20130217000839_n0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pic_manage/static/upload/20130217043421_n3.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/picture/models/picture.py" afterPath="$PROJECT_DIR$/pic_manage/picture/models/picture.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/picture/views/upload.py" afterPath="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pic_manage/templates/main.html" afterPath="$PROJECT_DIR$/pic_manage/templates/main.html" />
     </list>
     <ignored path="picManage.iws" />
@@ -25,15 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="upload.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/upload.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="14" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/main.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -46,7 +41,36 @@
       <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pic_manage/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="229" column="29" selection-start="7962" selection-end="7962" vertical-scroll-proportion="0.42105263">
+            <state line="19" column="9" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6574395">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.masonry.min.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="4265" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upload.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/upload.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="22" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pic_manage/manage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="38" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -55,25 +79,7 @@
       <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="136" column="16" selection-start="4840" selection-end="4840" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="1.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pic_manage/static/js/1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="37" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pic_manage/picture/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+            <state line="142" column="5" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -82,7 +88,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="30" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+            <state line="13" column="27" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -91,7 +97,7 @@
       <file leaf-file-name="api.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+            <state line="6" column="23" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +106,16 @@
       <file leaf-file-name="picture.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pic_manage/picture/models/picture.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="27" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+            <state line="21" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.3-py2.7.egg/django/db/models/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="448" column="8" selection-start="20110" selection-end="20110" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,13 +144,13 @@
         <option value="$PROJECT_DIR$/pic_manage/picture/models/__init__.py" />
         <option value="$PROJECT_DIR$/pic_manage/picture/views/main.py" />
         <option value="$PROJECT_DIR$/pic_manage/static/js/jquery.js" />
-        <option value="$PROJECT_DIR$/pic_manage/settings.py" />
-        <option value="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
         <option value="$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js" />
         <option value="$PROJECT_DIR$/pic_manage/crawImages.py" />
         <option value="$PROJECT_DIR$/pic_manage/urls.py" />
-        <option value="$PROJECT_DIR$/pic_manage/picture/models/picture.py" />
         <option value="$PROJECT_DIR$/pic_manage/picture/views/api.py" />
+        <option value="$PROJECT_DIR$/pic_manage/settings.py" />
+        <option value="$PROJECT_DIR$/pic_manage/picture/views/upload.py" />
+        <option value="$PROJECT_DIR$/pic_manage/picture/models/picture.py" />
         <option value="$PROJECT_DIR$/pic_manage/templates/main.html" />
       </list>
     </option>
@@ -219,24 +234,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,112 +259,6 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picManage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pic_manage" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="picture" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -376,10 +267,10 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="JavaScript.Libraries" />
-    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -431,6 +322,25 @@
       <option name="MULTIPROCESS" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="picManage" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -450,25 +360,6 @@
       <option name="useCustomRunCommand" value="false" />
       <option name="customRunCommand" value="" />
       <option name="launchJavascriptDebuger" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Unittests">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <module name="picManage" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -559,11 +450,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22264875" sideWeight="0.46547884" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12923865" sideWeight="0.8006682" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.076135635" sideWeight="0.7249443" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997833" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19933185" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27505568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -626,16 +517,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pic_manage/crawImages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="41" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery-1.9.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="28" selection-start="64205" selection-end="64205" vertical-scroll-proportion="0.0" />
@@ -651,26 +532,6 @@
         <state line="481" column="8" selection-start="18483" selection-end="18483" vertical-scroll-proportion="0.33183858" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/static/upload/20130217043421_n3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/static/upload/20130217000839_n0.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="50" selection-start="233" selection-end="240" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="16" selection-start="4840" selection-end="4840" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/static/js/1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="37" selection-start="2390" selection-end="2390" vertical-scroll-proportion="0.0" />
@@ -683,27 +544,70 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="30" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0" />
+        <state line="13" column="27" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="38" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" />
+        <state line="6" column="23" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pic_manage/picture/models/picture.py">
+    <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="27" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0" />
+        <state line="6" column="50" selection-start="233" selection-end="240" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="5" selection-start="4987" selection-end="4987" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/static/js/jquery.masonry.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4265" selection-start="4470" selection-end="4470" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/picture/views/upload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="822" selection-end="822" vertical-scroll-proportion="0.0" />
+        <state line="40" column="22" selection-start="1195" selection-end="1195" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/Django-1.3-py2.7.egg/django/db/models/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="448" column="8" selection-start="20110" selection-end="20110" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pic_manage/picture/models/picture.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="556" selection-end="556" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pic_manage/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="229" column="29" selection-start="7962" selection-end="7962" vertical-scroll-proportion="0.42105263">
+        <state line="19" column="9" selection-start="756" selection-end="756" vertical-scroll-proportion="0.6574395">
           <folding />
         </state>
       </provider>
